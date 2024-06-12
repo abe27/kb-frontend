@@ -99,7 +99,7 @@ const HomPage = () => {
                 <TableCell>{i.part_unit}</TableCell>
                 <TableCell>Active</TableCell>
                 <TableCell>
-                  <Link isExternal href={`http://localhost:5000/pdf?id=${i.mtm_no}`}>
+                  <Link isExternal href={`http://192.168.20.15:5000/pdf?id=${i.mtm_no}`}>
                     <Button
                       color="warning"
                       startContent={
