@@ -90,7 +90,7 @@ const AddPage = ({ prods }) => {
       redirect: "follow",
     };
 
-    fetch(`${process.env.API_HOST}/report`, requestOptions)
+    fetch(`http://192.168.20.15:5000/report`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         // router.push(`http://localhost:5000/pdf?id=${result.job_no}`)
