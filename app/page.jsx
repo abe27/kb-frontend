@@ -33,7 +33,7 @@ const HomPage = () => {
       redirect: "follow",
     };
 
-    fetch("http://localhost:5000/data", requestOptions)
+    fetch(`${process.env.API_HOST}/data`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         console.dir(result);

@@ -47,25 +47,13 @@ const AddPage = ({ prods }) => {
     }
     setPartData([]);
     setLoadingData(true);
-    fetch(`http://127.0.0.1:5000/detail?id=${partNo}`)
+    fetch(`${process.env.API_HOST}/detail?id=${partNo}`)
       .then((res) => res.json())
       .then((data) => {
         setPartData(data);
         console.dir(data);
         setLoadingData(false);
       });
-  };
-
-  const GetReport = () => {
-    const requestOptions = {
-      method: "GET",
-      redirect: "follow",
-    };
-
-    fetch("localhost:5000/pdf?id=JOB2024060001", requestOptions)
-      .then((response) => response.text())
-      .then((result) => console.log(result))
-      .catch((error) => console.error(error));
   };
 
   const postData = () => {
@@ -102,7 +90,7 @@ const AddPage = ({ prods }) => {
       redirect: "follow",
     };
 
-    fetch("http://127.0.0.1:5000/report", requestOptions)
+    fetch(`${process.env.API_HOST}/report`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
         // router.push(`http://localhost:5000/pdf?id=${result.job_no}`)
