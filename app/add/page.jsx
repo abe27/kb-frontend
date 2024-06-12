@@ -47,7 +47,7 @@ const AddPage = ({ prods }) => {
     }
     setPartData([]);
     setLoadingData(true);
-    fetch(`${process.env.API_HOST}/detail?id=${partNo}`)
+    fetch(`http://192.168.20.15:5000/detail?id=${partNo}`)
       .then((res) => res.json())
       .then((data) => {
         setPartData(data);
